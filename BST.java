@@ -134,6 +134,10 @@ public class BST {
 				} else {
 					parent.right = node.left;
 				}
+			}else {
+				int max = maxelement(node.left);
+				node.data = max;
+				removeItem(node.left,node,true,max);
 			}
 
 		}
