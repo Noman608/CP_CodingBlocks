@@ -90,6 +90,42 @@ public class Binarytree {
 		return max;
 	}
     
+public void PreOrder() {
+		PreOrder(this.root);
+	}
 
+	private void PreOrder(Node node) {
+		if(node==null)
+			return;
+		System.out.println(node.data+" ");
+		PreOrder(node.left);
+		PreOrder(node.right);
+	}
+	
+	
+	public void InOrder() {
+		InOrder(this.root);
+	}
 
+	private void InOrder(Node node) {
+		if (node == null)
+			return;
+		InOrder(node.left);
+		System.out.println(node.data + " ");
+		InOrder(node.right);
+	}
+	
+	public void PostOrder() {
+		PostOrder(this.root);
+	}
+
+	private void PostOrder(Node node) {
+		if (node == null)
+			return;
+		PostOrder(node.left);
+		PostOrder(node.right);
+		System.out.println(node.data + " ");
+		
+	}
+	
 }
