@@ -74,4 +74,22 @@ public class Binarytree {
 		if (node.right!=null) 
 			Display(node.right);
 	}
+
+
+	public int height() {
+		return height(this.root);
+	}
+
+	private int height(Node node) {
+		if (node == null)
+			return -1;
+		int Lhight = height(node.left);
+		int Rhight = height(node.right);
+		int max = Math.max(Lhight, Rhight) + 1;
+
+		return max;
+	}
+    
+
+
 }
