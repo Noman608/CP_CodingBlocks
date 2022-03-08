@@ -52,4 +52,26 @@ public class Binarytree {
 
 		return newNode;
 	}
+		public void Display() {
+		this.Display(this.root);
+	}
+	private void Display(Node node) {
+		String str = "";
+		if(node.left!=null) {
+			str += node.left.data + "=>";
+		}else {
+			str +="End=>";
+		}
+		str += node.data; 
+		if(node.right!=null) {
+			str += "<="+node.right.data ;
+		}else {
+			str +="<=End";
+		}
+		System.out.println(str);
+		if(node.left!=null)
+			Display(node.left);
+		if (node.right!=null) 
+			Display(node.right);
+	}
 }
