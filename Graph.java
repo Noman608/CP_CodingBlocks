@@ -86,5 +86,20 @@ public class Graph {
 		vtx1.nbrs.remove(vname2);
 		vtx2.nbrs.remove(vname1);
 	}
-
+	public boolean hasPath(String vname1,String vname2,HashMap<String, Boolean> processed) {
+		
+		processed.put(vname1, true);
+		
+		if(containsEdges(vname1, vname2)) {
+			return true;
+		}
+		Vertex vtx = Vtces.get(vname1);
+		ArrayList<String> naughbers = new ArrayList<>(vtx.nbrs.keySet());
+		for(String nbr:naughbers) {
+			if(!processed.containsKey(nbr) && hasPath(nbr, vname2,processed)) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
